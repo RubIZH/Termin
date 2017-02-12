@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <title>Termin</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+
+
+  <!-- CORE CSS-->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->    
+  <link href="css/custom/custom.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+
+<body>
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+      <div id="loader"></div>        
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+  <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- START HEADER -->
+  <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color">
+                <div class="nav-wrapper">
+                    <ul class="left">                      
+                      <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Termin</span></h1></li>
+                    </ul>
+                    <div class="header-search-wrapper hide-on-med-and-down">
+                        <i class="mdi-action-search"></i>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Buscar"/>
+                    </div>
+                    <ul class="right hide-on-med-and-down">                     
+                        <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-social-notifications"><small class="notification-badge red">5</small></i></a>
+                        </li>
+                    </ul>
+                    <!-- notifications-dropdown -->
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+  </header>
+  <!-- END HEADER -->
+
+  <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- START MAIN -->
+  <div id="main">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+
+      <!-- START LEFT SIDEBAR NAV-->
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+            <li class="user-details clay lighten-5">
+            <div class="row">
+                <div class="col col s4 m4 l4">
+                    <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+                </div>
+                <div class="col col s8 m8 l8">
+                    <ul id="profile-dropdown" class="dropdown-content">
+                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Salir</a>
+                        </li>
+                    </ul>
+                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Juan<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                    <p class="user-roal">Asesor de Sistemas</p>
+                </div>
+            </div>
+            </li>
+            <li class="bold"><a href="dashboard-usuario.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Tablero</a>
+            </li>
+            <li class="bold"><a href="calendario.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calendario</a>
+            </li>
+            
+        
+        </ul>
+        <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only teal"><i class="mdi-navigation-menu"></i></a>
+        </aside>
+      <!-- END LEFT SIDEBAR NAV-->
+
+      <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+      <!-- START CONTENT -->
+      <section id="content">
+        
+         <!--breadcrumbs start-->
+        <div id="breadcrumbs-wrapper">
+            <!-- Search for small screen -->
+            <div class="header-search-wrapper grey hide-on-large-only">
+                <i class="mdi-action-search active"></i>
+                <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Buscar">
+            </div>
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Calendario</h5>
+                <ol class="breadcrumbs">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="#">Páginas</a></li>
+                    <li class="active">Calendario</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--breadcrumbs end-->
+         
+        <!--breadcrumbs end-->
+        
+
+            <div class="container">
+          <div class="section">
+
+            <div class="divider"></div>
+            <div id="full-calendar">              
+              <div class="row">
+                <div class="col s12 m4 l3">
+
+                  <div id='external-events'>    
+                    <h4 class="header">Citas:</h4>
+
+                    <a class="fc-event waves-effect btn modal-trigger light-blue text-align" href="#modal1">Cita 1</a>
+
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                          <h4>Descripción de la cita:</h4>                              
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                        
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Eliminar</a>
+                          <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Modificar</a>
+                        </div>
+                    </div>
+
+
+                    <a class="fc-event waves-effect btn modal-trigger cyan text-align" href="#modal2">Cita 2</a>
+
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                          <h4>Descripción de la cita:</h4>                              
+                          <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                        
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Eliminar</a>
+                          <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Modificar</a>
+                        </div>
+                    </div>
+
+
+                    <a class="fc-event waves-effect btn modal-trigger teal text-align" href="#modal3">Cita 3</a>
+
+                    <div id="modal3" class="modal">
+                        <div class="modal-content">
+                          <h4>Descripción de la cita:</h4>                              
+                          <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                        
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Eliminar</a>
+                          <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Modificar</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <p>
+                     
+                    </p>
+                  </div>
+                </div>
+                <div class="col s12 m8 l9">
+                  <div id='calendar'></div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <!-- Floating Action Button -->
+            <div class="fixed-action-btn" style="bottom: 50px; right: 19px;" >
+                <a class="btn-floating teal btn-large modal-trigger" href="#modal4">
+                  <i class=" mdi-editor-insert-invitation"></i></a>         
+            </div>
+            <!-- Floating Action Button -->
+            <div id="modal4" class="modal">
+                        <div class="modal-content">
+                          <h4>Agregar cita:</h4>                              
+                          <form>
+                            <div id="input-date-picker" class="section">              
+                              <div class="row">
+                                <div class="col s12 m4 l3">
+                                  <p>Seleccione fecha:</p>                                  
+                                </div>
+                                <div class="col s6 m4 l4">
+                                 <input type="date" class="datepicker">
+                               </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col s12 m4 l3">
+                                <p>Participantes:</p>
+                              </div>
+                              <div class="col s12 m8 l9">
+                                <div class="input-field col s12">
+                                  <select multiple>
+                                    <option value="" disabled selected>Seleccione los participantes</option>
+                                    <option value="1">Juan Perez</option>
+                                    <option value="2">Pancho Juarez</option>
+                                    <option value="3">Modorio Barcelo</option>
+                                  </select>
+                                 
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                <div class="col s12 m4 l3">
+                  <p>Descripcion:</p>                  
+                </div>
+                <div class="col s12 m8 l9">
+                  <div class="row">
+                    <div class="input-field col s12">                     
+                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                          </form>                       
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Cancelar</a>
+                          <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Aceptar</a>
+                        </div>
+                    </div>
+
+
+        </div>
+     
+        <!--end container-->
+      </section>
+      <!-- END CONTENT -->
+
+      <!-- //////////////////////////////////////////////////////////////////////////// -->
+      <!-- START RIGHT SIDEBAR NAV-->
+      <aside id="right-sidebar-nav">
+        <ul id="chat-out" class="side-nav rightside-navigation">
+            <li class="li-hover">
+            </li>
+            <li class="li-hover">
+                <ul class="chat-collapsible" data-collapsible="expandable">
+                <li>
+                    <div class="collapsible-header teal white-text active"><i class="mdi-social-whatshot"></i>Actividad Reciente</div>
+                    <div class="collapsible-body recent-activity">
+                        
+                        <div class="recent-activity-list chat-out-list row">
+                            <div class="col s3 recent-activity-list-icon"><i class="mdi-action-schedule"></i>
+                            </div>
+                            <div class="col s9 recent-activity-list-text">
+                                <a href="#">Hace 4 Horas</a>
+                                <p>Creaste una cita con Carlos González.</p>
+                            </div>
+                        </div>
+                        <div class="recent-activity-list chat-out-list row">
+                            <div class="col s3 recent-activity-list-icon"><i class="mdi-action-schedule"></i>
+                            </div>
+                            <div class="col s9 recent-activity-list-text">
+                                <a href="#">Hace 6 Horas</a>
+                                <p>Creaste una cita con Alejandro Cárdenas.</p>
+                            </div>
+                        </div>
+                         <div class="recent-activity-list chat-out-list row">
+                            <div class="col s3 recent-activity-list-icon"><i class="mdi-action-schedule"></i>
+                            </div>
+                            <div class="col s9 recent-activity-list-text">
+                                <a href="#">Hace 3 Días</a>
+                                <p>Creaste una cita con Carlos Hernández.</p>
+                            </div>
+                        </div>
+                        <div class="recent-activity-list chat-out-list row">
+                            <div class="col s3 recent-activity-list-icon"><i class="mdi-action-settings-voice"></i>
+                            </div>
+                            <div class="col s9 recent-activity-list-text">
+                                <a href="#">Hace 5 Días</a>
+                                <p>Creaste una cita con Natalia González.</p>
+                            </div>
+                        </div>
+                        <div class="recent-activity-list chat-out-list row">
+                            <div class="col s3 recent-activity-list-icon"><i class="mdi-action-settings-voice"></i>
+                            </div>
+                            <div class="col s9 recent-activity-list-text">
+                                <a href="#">Semana Pasada</a>
+                                <p>Creaste una cita con Andrea Juárez.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header teal white-text"><i class="mdi-action-perm-contact-cal"></i>Solicitudes</div>
+                    <div class="collapsible-body favorite-associates">
+                        <div class="favorite-associate-list chat-out-list row">
+                                <div id="card-alert" class="card">
+                                      <div class="card-content">
+                                        <img src="images/avatar.jpg" alt="avatar" class="alert-circle responsive-img valign profile-image"/>
+                                        <span class="card-title "><i class="mdi-social-notifications"></i>Nueva Cita</span>
+                                        <p>Alejandra Chávez desea crear una nueva cita con 5 participantes más.</p>
+                                      </div>
+                                      <div class="card-action ">
+                                        <a class="btn-flat waves-effect green-text text-darken-3 "><i class="mdi-navigation-check left"></i> Ok</a>
+                                        <a class="btn-flat waves-effect red-text text-darken-3"><i class="mdi-content-clear left"></i> Cancelar</a>
+                                      </div>
+                                      <button type="button" class="close black-text" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                      </button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="collapsible-body favorite-associates">
+                        <div class="favorite-associate-list chat-out-list row">
+                                <div id="card-alert" class="card">
+                                      <div class="card-content">
+                                        <img src="images/avatar.jpg" alt="avatar" class="alert-circle responsive-img valign profile-image"/>
+                                        <span class="card-title "><i class="mdi-social-notifications"></i>Nueva Cita</span>
+                                        <p>Alejandra Chávez desea crear una nueva cita con 5 participantes más.</p>
+                                      </div>
+                                      <div class="card-action ">
+                                        <a class="btn-flat waves-effect green-text text-darken-3 "><i class="mdi-navigation-check left"></i> Ok</a>
+                                        <a class="btn-flat waves-effect red-text text-darken-3"><i class="mdi-content-clear left"></i> Cancelar</a>
+                                      </div>
+                                      <button type="button" class="close black-text" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                      </button>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+                </ul>
+            </li>
+        </ul>
+      </aside>
+      <!-- LEFT RIGHT SIDEBAR NAV-->
+
+    </div>
+    <!-- END WRAPPER -->
+
+  </div>
+  <!-- END MAIN -->
+
+
+
+  <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+   <!-- ================================================
+    Scripts
+    ================================================ -->
+    
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>    
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <!--prism-->
+    <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    
+    <!-- chartist -->
+    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>   
+
+    <!-- Calendar Script -->
+    <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
+    <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar-script.js"></script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script type="text/javascript" src="js/custom-script.js"></script>
+    
+    
+</body>
+
+</html>
